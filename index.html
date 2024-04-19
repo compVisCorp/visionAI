@@ -5,64 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>visionAI</title>
     <style>
-@font-face {
-    font-family: 'Vela Sans';
-    src: url('https://github.com/compVisCorp/visionAI/raw/main/fonts/VelaSans-Bold.ttf') format('truetype');
-    /* Дополнительные стили шрифта, если необходимо */
-}
-body {
-    background-image: url('https://raw.githubusercontent.com/compVisCorp/visionAI/main/background/background.jpg');
-    font-family: "Vela Sans", sans-serif;
-    background-color: #6A1B9A; /* Темно-фиолетовый фон */
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Высота равна высоте видимой части окна браузера */
-}
+        @font-face {
+            font-family: 'Vela Sans';
+            src: url('https://github.com/compVisCorp/visionAI/raw/main/fonts/VelaSans-Bold.ttf') format('truetype');
+            /* Дополнительные стили шрифта, если необходимо */
+        }
+        body {
+            background-image: url('https://raw.githubusercontent.com/compVisCorp/visionAI/main/background/background.jpg');
+            font-family: "Vela Sans", sans-serif;
+            background-color: #6A1B9A; /* Темно-фиолетовый фон */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Высота равна высоте видимой части окна браузера */
+        }
 
-.container {
-    text-align: center; 
-    background-color: rgba(74, 20, 140, 0.6);
-    border-radius: 60px;
-    padding: 20px;
-    color: #fff; 
-    box-shadow: 0 0 0 2px #FF4081, 0 0 0 4px #6A1B9A; 
-}
+        .container {
+            text-align: center; 
+            background-color: rgba(74, 20, 140, 0.6);
+            border-radius: 60px;
+            padding: 20px;
+            color: #fff; 
+            box-shadow: 0 0 0 2px #FF4081, 0 0 0 4px #6A1B9A; 
+        }
 
-    border-radius: 60px; /* Сильно закругленные углы */
-    padding: 20px;
-    color: #fff; /* Белый текст */
-    box-shadow: 0 0 0 2px #FF4081, 0 0 0 4px #6A1B9A; /* Градиентная обводка рамки */
-}
+        .container h1 {
+            color: #FFEB3B; /* Жёлтый заголовок */
+        }
 
+        .container ol {
+            padding-left: 20px; /* Отступ слева для списка */
+        }
 
+        .container li {
+            margin-bottom: 10px; /* Отступ между пунктами списка */
+        }
 
-.container h1 {
-    color: #FFEB3B; /* Жёлтый заголовок */
-}
-
-.container ol {
-    padding-left: 20px; /* Отступ слева для списка */
-}
-
-.container li {
-    margin-bottom: 10px; /* Отступ между пунктами списка */
-}
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
    <div class="container">
     <h1>visionAI</h1>
-    <ol>
-        <li><strong>Понимание задачи:</strong> Создать "умный" стенд с камерой, который может "видеть" и понимать окружающий мир.</li>
-        <li><strong>Сбор информации:</strong> Собрать изображения различных объектов, которые могут быть в комнате (стены, мебель, предметы на столе и т.д.).</li>
-        <li><strong>Обучение стенда:</strong> Научить стенд распознавать объекты на изображениях с помощью специальной программы.</li>
-        <li><strong>Тестирование и настройка:</strong> Проверить, как хорошо стенд понимает, что находится перед ним, и сделать необходимые исправления.</li>
-        <li><strong>Демонстрация работы:</strong> Показать, как стенд может распознавать объекты в реальной комнате.</li>
-        <li><strong>Подготовка к использованию:</strong> Подготовить инструкции по использованию стенда, чтобы люди могли легко им пользоваться.</li>
-        <li><strong>Запуск проекта:</strong> Запустить стенд, чтобы он стал доступен для использования в жизни.</li>
-    </ol>
+    <button onclick="toggleVisibility()">О проекте</button>
+    <div id="projectInfo" class="hide">
+        <ol>
+            <li><strong>Понимание задачи:</strong> Создать "умный" стенд с камерой, который может "видеть" и понимать окружающий мир.</li>
+            <li><strong>Сбор информации:</strong> Собрать изображения различных объектов, которые могут быть в комнате (стены, мебель, предметы на столе и т.д.).</li>
+            <li><strong>Обучение стенда:</strong> Научить стенд распознавать объекты на изображениях с помощью специальной программы.</li>
+            <li><strong>Тестирование и настройка:</strong> Проверить, как хорошо стенд понимает, что находится перед ним, и сделать необходимые исправления.</li>
+            <li><strong>Демонстрация работы:</strong> Показать, как стенд может распознавать объекты в реальной комнате.</li>
+            <li><strong>Подготовка к использованию:</strong> Подготовить инструкции по использованию стенда, чтобы люди могли легко им пользоваться.</li>
+            <li><strong>Запуск проекта:</strong> Запустить стенд, чтобы он стал доступен для использования в жизни.</li>
+        </ol>
+    </div>
 </div>
+
+<script>
+    function toggleVisibility() {
+        var projectInfo = document.getElementById("projectInfo");
+        if (projectInfo.classList.contains("hide")) {
+            projectInfo.classList.remove("hide");
+        } else {
+            projectInfo.classList.add("hide");
+        }
+    }
+</script>
+
 </body>
 </html>
