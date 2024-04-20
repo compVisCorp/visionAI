@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram</title>
+    <style>
+        @font-face {
+            font-family: 'Vela Sans';
+            src: url('https://github.com/compVisCorp/visionAI/raw/main/fonts/VelaSans-Bold.ttf') format('truetype');
+            /* Дополнительные стили шрифта, если необходимо */
+        }
+        body {
+            background-image: url('https://raw.githubusercontent.com/compVisCorp/visionAI/main/background/background.jpg');
+            font-family: "Vela Sans", sans-serif;
+            background-color: #6A1B9A; /* Темно-фиолетовый фон */
+            margin: 0;
+            padding-top: 60px; /* Установим отступ сверху для шапки */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Минимальная высота окна браузера */
+        }
+
+        .header {
+            position: fixed; /* Зафиксируем шапку сверху */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4A148C; /* Цвет фона шапки */
+            padding: 10px 0; /* Внутренний отступ сверху и снизу */
+            text-align: center; /* Выравнивание текста по центру */
+            z-index: 999; /* Поднимем шапку над остальным содержимым */
+        }
+
+        .header a {
+            color: #fff; /* Цвет текста ссылок */
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            padding: 10px 20px; /* Внутренний отступ ссылок */
+            margin: 0 10px; /* Внешний отступ ссылок */
+            border-radius: 5px; /* Закругление углов ссылок */
+            background-color: #6A1B9A; /* Цвет фона ссылок */
+        }
+.container {
+    text-align: center; 
+    background-color: rgba(74, 20, 140, 0.6);
+    border-radius: 60px;
+    padding: 20px 20px 20px; /* Установим больший внутренний отступ сверху для контейнера с текстом */
+    color: #fff; 
+    box-shadow: 0 0 0 2px #FF4081, 0 0 0 4px #6A1B9A; 
+    transition: opacity 0.7s ease; /* Добавим плавную анимацию перехода для контейнера */
+    opacity: 1; /* Установим начальное значение непрозрачности */
+    max-width: 600px; /* Максимальная ширина контейнера */
+    margin: auto; /* Центрируем контейнер по горизонтали */
+    line-height: 1.5;
+}
+
+.custom-button {
+    background-color: #95004F; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    padding: 10px 20px; /* Внутренний отступ кнопки */
+    border: none; /* Убираем границу кнопки */
+    border-radius: 5px; /* Закругляем углы кнопки */
+    cursor: pointer; /* Устанавливаем курсор при наведении */
+    transition: margin 0.3s; /* Добавляем плавный переход для отступа */
+    margin-bottom: 40px;
+}
+
+.custom-button:hover {
+    background-color: #6A1B9A; /* Изменяем цвет фона при наведении */
+}
+
+.container {
+    text-align: center; 
+    background-color: rgba(74, 20, 140, 0.6);
+    border-radius: 60px;
+    padding: 80px 20px 20px; /* Установим больший внутренний отступ сверху для контейнера с текстом */
+    color: #fff; 
+    transition: opacity 0.7s ease;
+    box-shadow: 0 0 0 2px #FF4081, 0 0 0 4px #6A1B9A; 
+    padding-top: 50px;
+    line-height: 0.5;
+}
+
+.container.hidden {
+    opacity: 0; /* Установим непрозрачность 0 для скрытого контейнера */
+    pointer-events: none; /* Отключим события мыши для скрытого контейнера */
+}
+
+.container.visible {
+    opacity: 1; /* Устанавливаем непрозрачность 1 для видимого контейнера */
+}
+
+    .container h1 {
+        color: #FFEB3B; /* Жёлтый заголовок */
+    }
+
+    .container ol {
+        padding-left: 20px; /* Отступ слева для списка */
+    }
+
+    .container li {
+        margin-bottom: 10px; /* Отступ между пунктами списка */
+    }
+</style>
+    </style>
+</head>
+<body>
+   <div class="header">
+        <a href="index.html">Главная</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="progress.html">Текущий прогресс</a>
+    </div>
+   <div class="container">
+    <h1>Telegram</h1>
+    <button onclick="toggleVisibility()" class="custom-button">Мой Телеграм - </button>
+    <div id="projectInfo" class="container hidden">
+        <p style="color: white;">Telegram - <a href="https://t.me/xterek" style="font-weight: bold; color: white;">@xterek</a></p>
+    </div>
+</div>
+
+<script>
+    function toggleVisibility() {
+        var projectInfo = document.getElementById("projectInfo");
+        projectInfo.classList.toggle("hidden");
+    }
+    var showInfoBtn = document.querySelector(".custom-button");
+    var infoContainer = document.getElementById("projectInfo");
+
+    var isInfoVisible = false;
+
+    showInfoBtn.addEventListener("click", function() {
+        if (!isInfoVisible) {
+            infoContainer.classList.remove("hidden");
+            showInfoBtn.style.marginBottom = "30px";
+            isInfoVisible = true;
+        } else {
+            infoContainer.classList.add("hidden");
+            showInfoBtn.style.marginBottom = "0";
+            isInfoVisible = false;
+        }
+           function toggleVisibility() {
+        var container = document.querySelector(".container");
+        container.classList.toggle("visible");
+    }
+    });
+</script>
+</script>
+
+</body>
+</html>
