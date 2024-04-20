@@ -15,17 +15,42 @@
             font-family: "Vela Sans", sans-serif;
             background-color: #6A1B9A; /* Темно-фиолетовый фон */
             margin: 0;
+            padding-top: 60px; /* Установим отступ сверху для шапки */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Высота равна высоте видимой части окна браузера */
+            min-height: 100vh; /* Минимальная высота окна браузера */
+        }
+
+        .header {
+            position: fixed; /* Зафиксируем шапку сверху */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4A148C; /* Цвет фона шапки */
+            padding: 10px 0; /* Внутренний отступ сверху и снизу */
+            text-align: center; /* Выравнивание текста по центру */
+            z-index: 999; /* Поднимем шапку над остальным содержимым */
+        }
+
+        .header a {
+            color: #fff; /* Цвет текста ссылок */
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            padding: 10px 20px; /* Внутренний отступ ссылок */
+            margin: 0 10px; /* Внешний отступ ссылок */
+            border-radius: 5px; /* Закругление углов ссылок */
+            background-color: #6A1B9A; /* Цвет фона ссылок */
+        }
+
+        .header a:hover {
+            background-color: #7B1FA2; /* Цвет фона ссылок при наведении */
         }
 
         .container {
             text-align: center; 
             background-color: rgba(74, 20, 140, 0.6);
             border-radius: 60px;
-            padding: 20px;
+            padding: 80px 20px 20px; /* Установим больший внутренний отступ сверху для контейнера с текстом */
             color: #fff; 
             box-shadow: 0 0 0 2px #FF4081, 0 0 0 4px #6A1B9A; 
         }
@@ -45,12 +70,32 @@
         .hide {
             display: none;
         }
+
+        .custom-button {
+            background-color: #95004F; /* Цвет фона кнопки */
+            color: #fff; /* Цвет текста кнопки */
+            padding: 10px 20px; /* Внутренний отступ кнопки */
+            border: none; /* Убираем границу кнопки */
+            border-radius: 5px; /* Закругляем углы кнопки */
+            cursor: pointer; /* Устанавливаем курсор при наведении */
+            transition: background-color 0.3s; /* Плавное изменение цвета фона */
+            margin-bottom: 40px;
+        }
+
+        .custom-button:hover {
+            background-color: #6A1B9A; /* Изменяем цвет фона при наведении */
+        }
     </style>
 </head>
 <body>
+   <div class="header">
+        <a href="index.html">Главная</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="progress.html">Текущий прогресс</a>
+    </div>
    <div class="container">
     <h1>visionAI</h1>
-    <button onclick="toggleVisibility()">О проекте</button>
+    <button onclick="toggleVisibility()" class="custom-button">О проекте</button>
     <div id="projectInfo" class="hide">
         <ol>
             <li><strong>Понимание задачи:</strong> Создать "умный" стенд с камерой, который может "видеть" и понимать окружающий мир.</li>
